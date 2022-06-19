@@ -3,6 +3,7 @@
 
 # 1.Найдите полный хеш и комментарий коммита, хеш которого начинается на aefea.
 >git log aefea -n 1
+
     commit aefead2207ef7e2aa5dc81a34aedf0cad4c32545
     Author: Alisdair McDiarmid <alisdair@users.noreply.github.com>
     Date:   Thu Jun 18 10:29:58 2020 -0400
@@ -11,11 +12,13 @@
 
 # 2. Какому тегу соответствует коммит 85024d3? 
 >git log 85024d3 --oneline -n 1
+
     85024d310 (tag: v0.12.23) v0.12.23
 # Ответ: v0.12.23
 
 # 3. Сколько родителей у коммита b8d720? Напишите их хеши.
 >git log b8d720 --oneline --graph
+
     9ea88f22f add/update community provider listings
     56cd7859e Merge pull request #23857 from hashicorp/cgriggs01-stable
 
@@ -23,6 +26,7 @@
 
 # Вариант 1 
 >git log v0.12.23..v0.12.24 --oneline
+
     33ff1c03b (tag: v0.12.24) v0.12.24
     b14b74c49 [Website] vmc provider links
     3f235065b Update CHANGELOG.md
@@ -36,12 +40,15 @@
 
 # Вариант 2 
 >git show --format=full v0.12.23
+
     commit 85024d3100126de36331c6982bfaac02cdab9e76 (tag: v0.12.23)
 
 >git show --format=full v0.12.24
+
     commit 33ff1c03bb960b332be3af2e333462dde88b279e (tag: v0.12.24)
  
 > git log 33ff1c03b  --not 85024d310 --oneline
+
     33ff1c03b (tag: v0.12.24) v0.12.24
     b14b74c49 [Website] vmc provider links
     3f235065b Update CHANGELOG.md
@@ -57,15 +64,17 @@
 # 5. Найдите коммит, в котором была создана функция func providerSource, ее определение в коде выглядит так func providerSource(...) (вместо троеточего перечислены аргументы).
 
 # Вариант 1 (кратко):
->git log -S"func providerSource(" --oneline 
-8c928e835 main: Consult local directories as potential mirrors of providers
+>git log -S"func providerSource(" --oneline
+
+   8c928e835 main: Consult local directories as potential mirrors of providers
 
 
 # Вариант 2:
 
 # Ищем исходники, в которых используется функция:
 >git grep -n "func providerSource("
-provider_source.go:23:func providerSource(configs []*cliconfig.ProviderInstallation, services *disco.Disco) (getproviders.Source, tfdiags.Diagnostics) { 
+
+  provider_source.go:23:func providerSource(configs []*cliconfig.ProviderInstallation, services *disco.Disco) (getproviders.Source, tfdiags.Diagnostics) { 
 
 # Находим коммит, где функция была добавлена:
 >git log -L :providerSource:provider_source.go --oneline
