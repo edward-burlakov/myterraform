@@ -4,12 +4,12 @@
 1.Найдите полный хеш и комментарий коммита, хеш которого начинается на aefea.
 >git log aefea --oneline -n 1
     aefead220 Update CHANGELOG.md
-> 
+ 
 
 2. Какому тегу соответствует коммит 85024d3? 
 >git log 85024d3 --oneline -n 1
     85024d310 (tag: v0.12.23) v0.12.23
-Ответ: v0.12.23
+# Ответ: v0.12.23
 
 3. Сколько родителей у коммита b8d720? Напишите их хеши.
 >git log b8d720 --oneline --graph
@@ -225,4 +225,4 @@ diff --git a/plugins.go b/plugins.go
     Author: Martin Atkins <mart@degeneration.co.uk>
     Date:   Wed May 3 16:25:41 2017 -0700
 
-Ответ:  Martin Atkins
+# Ответ:  Martin Atkins
