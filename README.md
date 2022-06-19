@@ -2,9 +2,12 @@
 
 
 # 1.Найдите полный хеш и комментарий коммита, хеш которого начинается на aefea.
->git log aefea --oneline -n 1
-    aefead220 Update CHANGELOG.md
- 
+>git log aefea -n 1
+    commit aefead2207ef7e2aa5dc81a34aedf0cad4c32545
+    Author: Alisdair McDiarmid <alisdair@users.noreply.github.com>
+    Date:   Thu Jun 18 10:29:58 2020 -0400
+
+        Update CHANGELOG.md
 
 # 2. Какому тегу соответствует коммит 85024d3? 
 >git log 85024d3 --oneline -n 1
