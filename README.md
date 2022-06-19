@@ -78,7 +78,7 @@
 
 # Находим коммит, где функция была добавлена:
 >git log -L :providerSource:provider_source.go --oneline
-# ====================================================================================
+# ==========================================
     8c928e835 main: Consult local directories as potential mirrors of providers
 
     diff --git a/provider_source.go b/provider_source.go
@@ -90,7 +90,7 @@
     +      // yet the new configuration constructs to customize provider search
     +       // locations. That'll come later.
     +       // For now, we have a fixed set of search directories:
-# ====================================================================================
+# ==========================================
 
 
 # 6. Найдите все коммиты, в которых была изменена функция globalPluginDirs.
@@ -106,7 +106,7 @@ plugins.go:func globalPluginDirs() []string {
 #  41ab0aef7
 #  66ebff90c
 #  8364383c3 (Описание функции)
-# =====================================================================================
+# =========================================
 78b122055 Remove config.go and update things using its aliases
 
 diff --git a/plugins.go b/plugins.go
@@ -224,7 +224,7 @@ diff --git a/plugins.go b/plugins.go
 +
 +       return ret
 +}
-#================================================================================
+#=======================================
 
 # 7. Кто автор функции synchronizedWriters?
 
