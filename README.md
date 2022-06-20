@@ -113,10 +113,12 @@
 # 6. Найдите все коммиты, в которых была изменена функция globalPluginDirs.
 
 >git grep  "func globalPluginDirs("
+
 # Ищем исходник, в котором используется функция:
 plugins.go:func globalPluginDirs() []string {
 
 >git log -L :globalPluginDirs:plugins.go --oneline
+
 #  Коммиты, в которых редактировалась функция globalPluginDirs
 #  78b122055
 #  52dbf9483 
@@ -145,6 +147,7 @@ diff --git a/plugins.go b/plugins.go
 
         return ret
  }
+
 #
 52dbf9483 keep .terraform.d/plugins for discovery
 
@@ -166,6 +169,7 @@ diff --git a/plugins.go b/plugins.go
 
         return ret
  }
+
 #
 41ab0aef7 Add missing OS_ARCH dir to global plugin paths
 
@@ -187,6 +191,7 @@ diff --git a/plugins.go b/plugins.go
 
         return ret
  }
+
 #
 66ebff90c move some more plugin search path logic to command
 
@@ -223,6 +228,7 @@ diff --git a/plugins.go b/plugins.go
 --- /dev/null
 +++ b/plugins.go
 @@ -0,0 +16,22 @@
+
 +func globalPluginDirs() []string {
 +       var ret []string
 +
@@ -245,6 +251,7 @@ diff --git a/plugins.go b/plugins.go
 +
 +       return ret
 +}
+
 #=======================================
 
 # 7. Кто автор функции synchronizedWriters?
